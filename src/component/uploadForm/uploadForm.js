@@ -3,6 +3,9 @@ import uploadDataHooker from "../../action/uploadDataHooker";
 import DatasetNameInputBox from "./datasetName";
 import DatasetTypeSelect from "./datasetType";
 import UploadFileSelect from "./uploadFile";
+import Publicity from "./publicity";
+import MetaData from "./metaData";
+
 class UploadForm extends React.Component{
     render() {
         return(
@@ -17,8 +20,15 @@ class UploadForm extends React.Component{
                     <UploadFileSelect />
                 </div>
                 <div className="uploadData-form-line">
+                    <Publicity />
+                </div>
+                <div className="uploadData-form-line">
+                    <MetaData />
+                </div>
+                <div className="uploadData-form-line">
                     <button onClick={uploadDataHooker}>Upload</button>
                 </div>
+
             </div>
         )
     }

@@ -1,10 +1,13 @@
 import axios from "axios";
 import {uploadDataAPI} from "../config";
 
-async function upload(datasetName, type, file) {
+async function upload(datasetName, type, file, publicity, userToken, metaData) {
     let formData = new FormData();
     formData.append("datasetID", datasetName);
     formData.append("datasetType",type);
+    formData.append("publicity", publicity);
+    formData.append("userToken", userToken);
+    formData.append("metaData", metaData);
     formData.append("file", file);
     let response = await axios.post(uploadDataAPI, formData, {
         headers: {
